@@ -1,0 +1,211 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments - MediHome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="text-align:center; margin-top: 100px;">Book an Appointment</h1>
+    <p style="text-align:center;">Appointment form or booking details will be available here.</p>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"><!--for adding ☰-->
+
+  <title>Patient Appointment Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('./appimg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.85); /* More opaque for better visibility */
+      width: 90%;
+      max-width: 700px;
+      max-height: 85vh;
+      overflow-y: auto; 
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      background-color: #f9f9f9;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .form-section {
+      margin-bottom: 25px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+    }
+    .confirmation-box {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #dff0d8;
+        color: #3c763d;
+        padding: 15px 25px;
+        border: 1px solid #d6e9c6;
+        border-radius: 8px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        font-weight: 500;
+        z-index: 999;
+        animation: slideDown 0.5s ease-out;
+      }
+      
+      .confirmation-box i {
+        margin-right: 8px;
+        color: #3c763d;
+      }
+      
+      @keyframes slideDown {
+        from {
+          top: 0;
+          opacity: 0;
+        }
+        to {
+          top: 20px;
+          opacity: 1;
+        }
+      }
+      
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Patient Appointment Form</h2>
+    <form>
+      <div class="form-section">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">--Select--</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <div class="form-section">
+        <label for="doctor">Doctor's Name:</label>
+        <input type="text" id="doctor" name="doctor" required>
+
+        <label for="department">Department/Specialty:</label>
+        <input type="text" id="department" name="department">
+
+        <label for="reason">Reason for Visit:</label>
+        <textarea id="reason" name="reason" rows="3"></textarea>
+
+        <label for="appointmentDate">Preferred Date:</label>
+        <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+        <label for="appointmentTime">Preferred Time:</label>
+        <input type="time" id="appointmentTime" name="appointmentTime" required>
+      </div>
+
+      <button type="submit">Submit Appointment Request</button>
+    </form>
+    <div id="confirmationMsg" class="confirmation-box">
+        <i class="fas fa-check-circle"></i> Your appointment request has been submitted successfully!
+      </div>
+      
+  </div>
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+  
+      setTimeout(() => {
+        form.reset();
+
+        window.location.href = "thanku.html";
+      }, 1000);
+    });
+    
+
+  </script>
+  
+  
+
+</body>
+</html>

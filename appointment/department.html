@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Departments | MediHome</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for menu icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="department-page">
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#">
+      <img src="logo.jpg" alt="MediHome Logo" class="logo" />
+      <span class="brand-name">MediHome</span>
+    </a>
+    <i id="menu-open" class="fa fa-bars"></i>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" id="navLinks">
+      <i id="menu-close" class="fa fa-times"></i>
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="doctor.html">DOCTORS</a></li>
+        <li><a href="appointment.html">APPOINTMENT</a></li>
+        <li><a href="department.html">DEPARTMENT</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Department Section -->
+  <section class="department-section">
+    <h1>Our Medical Departments</h1>
+    <p>Explore our wide range of medical services offered by expert specialists.</p>
+
+    <div class="department-container">
+      <div class="slider-wrapper">
+        <div class="doctor-slider">
+
+          <div class="department-card">
+            <img src="cardio.png" alt="Cardiology">
+            <h3>Cardiology</h3>
+            <p>Heart-related diagnosis, treatments, and surgeries by top cardiologists.</p>
+          </div>
+
+          <div class="department-card">
+            <img src="neurol.jpeg" alt="Neurology">
+            <h3>Neurology</h3>
+            <p>Brain, spine and nervous system care under expert supervision.</p>
+          </div>
+
+          <div class="department-card">
+            <img src="peditrat.jpg" alt="Pediatrics">
+            <h3>Pediatrics</h3>
+            <p>Comprehensive care for infants, children, and adolescents.</p>
+          </div>
+
+          <div class="department-card">
+            <img src="dermo.jpg" alt="Dermatology">
+            <h3>Dermatology</h3>
+            <p>Skin, hair, and nail treatments with advanced dermatological methods.</p>
+          </div>
+
+          <div class="department-card">
+            <img src="ortho.jpg" alt="Orthopedics">
+            <h3>Orthopedics</h3>
+            <p>Expert care for bones, joints, and muscles including surgeries and rehab.</p>
+          </div>
+
+          <div class="department-card">
+            <img src="radio.jpg" alt="Radiology">
+            <h3>Radiology</h3>
+            <p>Advanced imaging services including X-rays, MRI, and CT scans.</p>
+          </div>
+
+        </div>
+
+        <!-- Slide Buttons -->
+        <button class="slide-btn prev-btn">&#10094;</button>
+        <button class="slide-btn next-btn">&#10095;</button>
+      </div>
+    </div>
+  </section>
+  <footer>
+  <p>&copy; 2025 MediHome. All rights reserved.</p>
+</footer>
+  <!-- JavaScript for Slider -->
+  <script>
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const slider = document.querySelector('.doctor-slider');
+
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({
+        left: -300,
+        behavior: 'smooth'
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+  <!-- JavaScript for Mobile Menu -->
+  <script>
+    const menuOpen = document.getElementById('menu-open');
+    const menuClose = document.getElementById('menu-close');
+    const navLinks = document.getElementById('navLinks');
+
+    menuOpen.addEventListener('click', () => {
+      navLinks.style.right = '0';
+    });
+
+    menuClose.addEventListener('click', () => {
+      navLinks.style.right = '-200px';
+      
+    });
+  </script>
+
+</body>
+</html>

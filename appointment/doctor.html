@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Doctors | MediHome</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for menu icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="doctor-page">
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#">
+      <img src="logo.jpg" alt="MediHome Logo" class="logo" />
+      <span class="brand-name">MediHome</span>
+    </a>
+    <i id="menu-open" class="fa fa-bars"></i>
+    <div class="nav-links" id="navLinks">
+      <i id="menu-close" class="fa fa-times"></i>
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="doctor.html">DOCTORS</a></li>
+        <li><a href="appointment.html">APPOINTMENT</a></li>
+        <li><a href="department.html">DEPARTMENT</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Doctors Section -->
+  <section class="team-section">
+    <h2 class="team-title">Meet Our Doctors</h2>
+
+    <div class="slider-wrapper">
+      <div class="doctor-slider">
+        <!-- Doctor Cards -->
+        <div class="doctor-card">
+          <img src="doc1.png" alt="Dr. Ravi kumar">
+          <h3>Dr. Ravi kumar</h3>
+          <p>Cardiologist</p>
+          <p>MBBS, MD (Cardiology)</p>
+        </div>
+        <div class="doctor-card">
+          <img src="doc2.png" alt="Dr. Neha Sharma">
+          <h3>Dr. Neha Sharma</h3>
+          <p>Neurologist</p>
+          <p>MBBS, MD (brain)</p>
+        </div>
+        <div class="doctor-card">
+          <img src="doc3.png" alt="Dr. Aditya patel">
+          <h3>Dr. Aditya patel</h3>
+          <p>Pediatrician</p>
+          <p>MBBS, DCH</p>
+        </div>
+        <div class="doctor-card">
+          <img src="doc4.jpg" alt="Dr. Ankit Verma">
+          <h3>Dr. Ankit Verma</h3>
+          <p>Orthopedic Surgeon</p>
+          <p>MBBS, MS (Ortho)</p>
+        </div>
+        <div class="doctor-card">
+          <img src="doc5.jpg" alt="Dr. Saanvi jaiswal">
+          <h3>Dr. Saanvi Jaiswal</h3>
+          <p>Dermatologist</p>
+          <p>MBBS, MS (Skin&VD)</p>
+        </div>
+        <div class="doctor-card">
+          <img src="doc6.jpeg" alt="Dr. Shalini Khatri">
+          <h3>Dr. Shalini Khatri</h3>
+          <p>Gynecologist</p>
+          <p>MBBS, MS (Women's Health)</p>
+        </div>
+      </div>
+
+      <!-- Slide Buttons -->
+      <button class="slide-btn prev-btn">&#10094;</button>
+      <button class="slide-btn next-btn">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Booking Steps -->
+  <section id="steps" class="section">
+    <h2>How to Book an Appointment</h2>
+    <ul class="steps">
+      <li>1. Register or Login to your account</li>
+      <li>2. Choose a department and doctor</li>
+      <li>3. Select date and time</li>
+      <li>4. Confirm and get appointment slip</li>
+    </ul>
+    <a href="appointment.html" class="btn">Get Started</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MediHome. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Doctor Slider -->
+  <script>
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const slider = document.querySelector('.doctor-slider');
+
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({
+        left: -300,
+        behavior: 'smooth'
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+  <!-- JavaScript for Mobile Menu -->
+  <script>
+    const menuOpen = document.getElementById('menu-open');
+    const menuClose = document.getElementById('menu-close');
+    const navLinks = document.getElementById('navLinks');
+
+    menuOpen.addEventListener('click', () => {
+      navLinks.style.right = '0';
+    });
+
+    menuClose.addEventListener('click', () => {
+      navLinks.style.right = '-200px';
+    });
+  </script>
+
+</body>
+</html>
